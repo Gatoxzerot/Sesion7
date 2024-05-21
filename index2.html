@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grado de Eficiencia</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Grado de Eficiencia del Operario</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var tornillosDefectuosos, tornillosProducidos, gradoEficiencia;
+
+                // Fase entrada/lectura de datos
+                tornillosDefectuosos = parseInt(prompt("Ingrese el número de tornillos defectuosos"));
+                tornillosProducidos = parseInt(prompt("Ingrese el número de tornillos producidos"));
+
+                // Inicializar variable para el grado de eficiencia
+                gradoEficiencia = 0;
+
+                // Condicionales para determinar el grado de eficiencia
+                if (tornillosDefectuosos < 200) {
+                    if (tornillosProducidos > 10000) {
+                        gradoEficiencia = 8;
+                    } else {
+                        gradoEficiencia = 6;
+                    }
+                } else {
+                    if (tornillosProducidos > 10000) {
+                        gradoEficiencia = 7;
+                    } else {
+                        gradoEficiencia = 5;
+                    }
+                }
+
+                // Fase de salida
+                document.write("======= Grado de Eficiencia =======<br>");
+                document.write("Tornillos defectuosos: " + tornillosDefectuosos + "<br>");
+                document.write("Tornillos producidos: " + tornillosProducidos + "<br>");
+                document.write("Grado de eficiencia: " + gradoEficiencia + "<br>");
+                document.write("===================================<br>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

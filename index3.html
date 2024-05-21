@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutería - Cálculo de Descuento</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Frutería - Descuento en Manzanas</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var kilosComprados, precioPorKilo, descuento, totalSinDescuento, totalConDescuento;
+
+                // Fase entrada/lectura de datos
+                kilosComprados = parseFloat(prompt("Ingrese el número de kilos de manzanas que desea comprar:"));
+                precioPorKilo = parseFloat(prompt("Ingrese el precio por kilo de manzanas:"));
+
+                // Inicializar variable de descuento
+                descuento = 0;
+
+                // Condicionales para determinar el porcentaje de descuento
+                if (kilosComprados >= 0 && kilosComprados <= 2) {
+                    descuento = 0;
+                } else if (kilosComprados > 2 && kilosComprados <= 5) {
+                    descuento = 10;
+                } else if (kilosComprados > 5 && kilosComprados <= 10) {
+                    descuento = 15;
+                } else if (kilosComprados > 10) {
+                    descuento = 20;
+                }
+
+                // Calcular el costo total sin descuento
+                totalSinDescuento = kilosComprados * precioPorKilo;
+
+                // Calcular el costo total con descuento
+                totalConDescuento = totalSinDescuento * (1 - descuento / 100);
+
+                // Fase de salida
+                document.write("======= Detalle de la Compra =======<br>");
+                document.write("Kilos comprados: " + kilosComprados + "<br>");
+                document.write("Precio por kilo: $" + precioPorKilo.toFixed(2) + "<br>");
+                document.write("Descuento aplicado: " + descuento + "%<br>");
+                document.write("Total sin descuento: $" + totalSinDescuento.toFixed(2) + "<br>");
+                document.write("Total con descuento: $" + totalConDescuento.toFixed(2) + "<br>");
+                document.write("===================================<br>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

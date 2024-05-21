@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de Prácticas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Promedio de Prácticas</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var nota1, nota2, nota3, nota4, notas, menorNota, promedio;
+
+                // Fase entrada/lectura de datos
+                nota1 = parseFloat(prompt("Ingrese la nota de la práctica 1:"));
+                nota2 = parseFloat(prompt("Ingrese la nota de la práctica 2:"));
+                nota3 = parseFloat(prompt("Ingrese la nota de la práctica 3:"));
+                nota4 = parseFloat(prompt("Ingrese la nota de la práctica 4:"));
+
+                // Almacenar las notas en un array
+                notas = [nota1, nota2, nota3, nota4];
+
+                // Encontrar la nota menor
+                menorNota = Math.min(...notas);
+
+                // Eliminar la nota menor del array
+                notas.splice(notas.indexOf(menorNota), 1);
+
+                // Calcular el promedio de las tres notas más altas
+                promedio = (notas[0] + notas[1] + notas[2]) / 3;
+
+                // Fase de salida
+                document.write("======= Promedio de Prácticas =======<br>");
+                document.write("Nota 1: " + nota1 + "<br>");
+                document.write("Nota 2: " + nota2 + "<br>");
+                document.write("Nota 3: " + nota3 + "<br>");
+                document.write("Nota 4: " + nota4 + "<br>");
+                document.write("Nota eliminada: " + menorNota + "<br>");
+                document.write("Promedio de las tres notas más altas: " + promedio.toFixed(2) + "<br>");
+                document.write("====================================<br>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>

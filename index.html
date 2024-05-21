@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoción de Llantas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <h3>Promoción de Llantas "Ponchadas"</h3>
+        <div id="resultado">
+            <script>
+                // Declaración de variables
+                var numeroLlantas, precioUnitario, costoTotal;
+
+                // Fase entrada/lectura de datos
+                numeroLlantas = parseInt(prompt("Ingrese el número de llantas que desea comprar"));
+
+                // Inicializar variables
+                precioUnitario = 0;
+                costoTotal = 0;
+
+                // Condicionales para determinar el precio unitario
+                if (numeroLlantas < 5) {
+                    precioUnitario = 30000;
+                } else if (numeroLlantas >= 5 && numeroLlantas <= 10) {
+                    precioUnitario = 25000;
+                } else if (numeroLlantas > 10) {
+                    precioUnitario = 20000;
+                }
+
+                // Calcular el costo total
+                costoTotal = numeroLlantas * precioUnitario;
+
+                // Fase de salida
+                document.write("======= Detalle de la Compra =======<br>");
+                document.write("Número de llantas: " + numeroLlantas + "<br>");
+                document.write("Precio por cada llanta: $" + precioUnitario + "<br>");
+                document.write("Costo total de la compra: $" + costoTotal + "<br>");
+                document.write("===================================<br>");
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+
